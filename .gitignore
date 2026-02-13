@@ -1,12 +1,8 @@
 node_modules
+dist
+.env
 .env.local
 .DS_Store
-dist
-build
-*.sql
-!schema.sql
-!seed.sql
-status_log.txt
-status.json
 .vscode
 .idea
+*.log
