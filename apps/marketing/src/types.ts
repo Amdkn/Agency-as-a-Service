@@ -4,7 +4,7 @@ export interface NavItem {
   type?: PageType;
 }
 
-export type PageType = 'home' | 'solaris' | 'nexus' | 'orbiter';
+export type PageType = 'home' | 'solaris' | 'nexus' | 'orbiter' | 'login';
 
 export interface Pillar {
   id: string;

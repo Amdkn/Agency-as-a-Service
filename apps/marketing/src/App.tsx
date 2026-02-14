@@ -4,6 +4,7 @@ import HomePage from './components/HomePage';
 import SolarisPage from './components/SolarisPage';
 import NexusPage from './components/NexusPage';
 import OrbiterPage from './components/OrbiterPage';
+import LoginPage from './components/LoginPage';
 import Footer from './components/Footer';
 import { PageType } from './types';
 
@@ -18,18 +19,22 @@ const App: React.FC = () => {
         return <NexusPage />;
       case 'orbiter':
         return <OrbiterPage />;
+      case 'login':
+        return <LoginPage />;
       default:
         return <HomePage onChangePage={setCurrentPage} />;
     }
   };
 
+  const isLogin = currentPage === 'login';
+
   return (
     <div className="min-h-screen bg-background-light dark:bg-background-dark text-slate-900 dark:text-white overflow-x-hidden">
-      <Navbar currentPage={currentPage} onChangePage={setCurrentPage} />
+      {!isLogin && <Navbar currentPage={currentPage} onChangePage={setCurrentPage} />}
       <main>
         {renderPage()}
       </main>
-      <Footer />
+      {!isLogin && <Footer />}
     </div>
   );
 };
